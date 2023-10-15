@@ -8,7 +8,8 @@ public class Facade {
 	public void migrarCliente(String nome, String cep) {
 		String cidade = CepApi.getInstancia().recuperarCidade(cep);
 		String estado = CepApi.getInstancia().recuperarEstado(cep);
+		String rua = CepApi.getInstancia().recuperarRua(cep);
 		
-		CrmService.gravarCliente(nome, cep, cidade, estado);
+		CrmService.gravarCliente(nome, cep, cidade, estado, rua);
 	}
 }
